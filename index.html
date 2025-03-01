@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="theme-controls">
+                <div class="theme-switch">
+                    <input type="checkbox" id="darkMode" class="theme-checkbox">
+                    <label for="darkMode" class="theme-label">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </label>
+                </div>
+                <div class="theme-colors">
+                    <button class="theme-btn" data-theme="default"><i class="fas fa-sun"></i></button>
+                    <button class="theme-btn" data-theme="ocean"><i class="fas fa-water"></i></button>
+                    <button class="theme-btn" data-theme="forest"><i class="fas fa-tree"></i></button>
+                    <button class="theme-btn" data-theme="sunset"><i class="fas fa-moon"></i></button>
+                </div>
+                <div class="unit-switch">
+                    <button class="unit-btn active" data-unit="metric">°C</button>
+                    <button class="unit-btn" data-unit="imperial">°F</button>
+                </div>
+            </div>
+            <div class="datetime-box">
+                <div class="date"></div>
+                <div class="time"></div>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Enter city name" id="search-input">
+                <button id="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="weather-info">
+                <img src="" alt="weather icon" class="weather-icon">
+                <div class="weather-text">
+                    <h2 class="temperature"></h2>
+                    <h3 class="description"></h3>
+                    <h3 class="city"></h3>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-panel">
+            <div class="map-controls">
+                <button class="map-btn active" data-map="standard">
+                    <i class="fas fa-map"></i>
+                </button>
+                <button class="map-btn" data-map="satellite">
+                    <i class="fas fa-satellite"></i>
+                </button>
+                <button class="map-btn" data-map="radar">
+                    <i class="fas fa-cloud-rain"></i>
+                </button>
+            </div>
+            <div class="weather-details">
+                <div class="humidity">
+                    <i class="fas fa-water"></i>
+                    <div class="text">
+                        <span></span>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="wind">
+                    <i class="fas fa-wind"></i>
+                    <div class="text">
+                        <span></span>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+                <div class="sun-cycle">
+                    <div class="sunrise">
+                        <i class="fas fa-sun"></i>
+                        <div class="text">
+                            <span></span>
+                            <p>Sunrise</p>
+                        </div>
+                    </div>
+                    <div class="sunset">
+                        <i class="fas fa-moon"></i>
+                        <div class="text">
+                            <span></span>
+                            <p>Sunset</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="map"></div>
+            <div class="forecast">
+                <h3>5-Day Forecast</h3>
+                <div class="forecast-container"></div>
+            </div>
+        </div>
+    </div>
+    <div class="places-overview">
+        <h3>Places Overview</h3>
+        <div class="places-grid"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
